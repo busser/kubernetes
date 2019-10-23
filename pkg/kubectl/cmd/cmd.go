@@ -49,6 +49,7 @@ import (
 	cmdexec "k8s.io/kubectl/pkg/cmd/exec"
 	"k8s.io/kubectl/pkg/cmd/explain"
 	"k8s.io/kubectl/pkg/cmd/expose"
+	"k8s.io/kubectl/pkg/cmd/helloworld"
 	"k8s.io/kubectl/pkg/cmd/label"
 	"k8s.io/kubectl/pkg/cmd/logs"
 	"k8s.io/kubectl/pkg/cmd/options"
@@ -492,6 +493,7 @@ func NewKubectlCommand(in io.Reader, out, err io.Writer) *cobra.Command {
 				expose.NewCmdExposeService(f, ioStreams),
 				run.NewCmdRun(f, ioStreams),
 				set.NewCmdSet(f, ioStreams),
+				helloworld.NewCmdHelloWorld(),
 			},
 		},
 		{
